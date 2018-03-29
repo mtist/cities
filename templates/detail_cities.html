@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ detail.city_name }} {% endblock %}
+
+{% block breadcrumbs %}
+    <li class="breadcrumb-item " aria-current="page"><a href="{% url 'list_view'%}">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page"><a href="{% url 'detail_view' detail.slug%}">{{ detail.city_name }}</a></li>
+{% endblock %}
+
+{% block content %}
+
+    <div class="detail">
+        <h2>City name: {{ detail.city_name }}</h2>
+        <h3>Country: {{ detail.country }}</h3>
+        <h3>Population: {{ detail.population }}</h3>
+        <h3>Region: {{ detail.region }}</h3>
+        <h3>Latitude: {{ detail.latitude }}</h3>
+        <h3>Longitude: {{ detail.longitude }}</h3>
+    </div>
+
+{% endblock %}

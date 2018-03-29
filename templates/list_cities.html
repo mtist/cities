@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %} Cities {% endblock %}
+
+{% block breadcrumbs %}
+    <li class="breadcrumb-item active" aria-current="page"><a href="{% url 'list_view'%}">Home</a></li>
+{% endblock %}
+
+{% block content %}
+    <div class="container justify-content-md-center">
+        <div class="row">
+            {% for city in list %}
+                <div class="city-card">
+                    <h5>{{ city.city_name }}</h5>
+                    <a href="{% url 'detail_view' city.slug %}">More</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+    {% if is_paginated %}
+        <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ get_previous }}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+            {% endif %}
+            {% for i in paginator.page_range %}
+                {% if page_obj.number == i %}
+                    <li class="page-item active">{{ i }}</li>
+                {% else %}
+                    <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                {% endif %}
+            {% endfor %}
+            {% if page_obj.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ get_next }}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+
+{% endblock %}

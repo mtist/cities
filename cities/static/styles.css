@@ -1,0 +1,59 @@
+body {
+    background-color: #7c7c7c;
+}
+
+.city-card {
+    margin: 5px;
+    padding: 10px;
+    width: 200px;
+    height: 80px;
+    border-width: 1px;
+    /*border-top-width: 0;*/
+    /*border-right-width: 0;*/
+    /*border-bottom-width: 1px;*/
+    /*border-left-width: 1px;*/
+    border-color: #515151;
+    text-align: center;
+    background-color: #2d2d2d;
+    color: #e2e0e0;
+}
+
+.container {
+    padding: 20px;
+}
+
+.breadcrumb {
+    background-color: #2d2d2d;
+    border-width: 1px;
+    border-color: #515151;
+    color: #6c757d;
+    text-decoration: none;
+}
+
+.breadcrumb-item a {
+    color: #6c757d;
+}
+
+.breadcrumb-item a:hover {
+    color: #6c757d;
+    text-decoration: none;
+}
+
+.breadcrumb-item.active {
+    color: #e2e0e0;
+}
+
+.breadcrumb-item.active a {
+    color: #e2e0e0;
+}
+
+.breadcrumb-item.active a:hover {
+    color: #e2e0e0;
+}
+
+.detail {
+    margin: 0;
+    padding: 30px;
+    color: #e2e0e0;
+    background-color: #2d2d2d;
+}
